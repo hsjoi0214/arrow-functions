@@ -56,3 +56,54 @@ function getPerson(name, age) {
 
 //arrow function 05
 const getPerson = (name, age) => ({name,age});
+
+
+//vanilla 06
+function sayHello(name = "World") {
+  console.log(`Hello, ${name}!`);
+}
+
+//arrow function 06 (explicit return the value)
+const sayHello = (name="World") => {
+  console.log(`Hello,${name}!`);
+  return `Hello,${name}!`;
+}
+
+//arrow function 06 (implicit return the value)
+const sayHello = (name="World") => console.log(`Hello,${name}!`);
+  
+
+//vanilla 07
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+
+//arrow function 07
+const sum = (...numbers) => numbers.reduce((total, num) => total + num, 0);
+
+
+//vanilla function 08
+function counter() {
+  let count = 0;
+  function increment() {
+    count++;
+    console.log(count);
+  }
+
+  return increment;
+}
+
+const myCounter = counter();
+myCounter(); // Output: 1
+myCounter(); // Output: 2
+
+
+//arrow function 08
+const counter = () => {
+  let count = 0;
+  const increment = () => {
+    count++;
+    console.log(count);
+  };
+  return increment
+}
